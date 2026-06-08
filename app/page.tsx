@@ -814,19 +814,22 @@ const reviews = [
     name: "Tito",
     role: "CEO of TT's Clothing",
     text: "Working with Ayomide was a game-changer for our brand. He perfectly captured the essence of TT's Clothing in a digital space. The website is not only visually stunning but also incredibly fast and user-friendly. Our online sales have seen a significant boost since the launch!",
-    avatar: "/images/placeholder.jpg",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Sly7oG0k1S0bX8Z6yS7bV4uL2m.png",
   },
   {
     name: "Mr. Tamilore",
     role: "CEO of Agate",
     text: "Ayomide's work on the Agate smart card platform was exceptional. He architected a complex system into a seamless, intuitive experience. His deep understanding of both backend robustness and frontend elegance is exactly what we needed for our high-tech solution.",
-    avatar: "/images/placeholder.jpg",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N3w0vPzXqG4T1hJ6yS7bV4uL2m.png",
   },
   {
     name: "Mr. Isaac",
     role: "CEO of Colisdav Gadgets",
     text: "The website Ayomide built for Colisdav Gadgets exceeded all our expectations. It's clean, modern, and perfectly displays our tech products. His professionalism and ability to deliver on time make him our go-to developer for all future projects.",
-    avatar: "/images/placeholder.jpg",
+    avatar:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N4w0vPzXqG5T1hJ6yS7bV4uL2m.png",
   },
 ];
 
