@@ -679,24 +679,14 @@ const devProjects = [
   },
   {
     title: "Campus Ride",
-    description: "A specialized ride-hailing platform for campus commutes, featuring real-time tracking, quick booking, and secure wallet integration.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N6q0iVpXzG3T1hJ6yS7bV4uL2m.png",
+    description:
+      "A specialized ride-hailing platform for campus commutes, featuring real-time tracking, quick booking, and secure wallet integration.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N6q0iVpXzG3T1hJ6yS7bV4uL2m.png",
     githubUrl: "https://github.com/midethegreat/Camous-Ride.git",
-    techIcons: [NextjsIcon, TailwindIcon, Globe, MapPin]
-  }
-];
-
-const allProjectsList = [
-  {
-    title: "Campus Ride",
-    description: "Ride-hailing platform for campus commutes with real-time tracking and secure wallet integration.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N6q0iVpXzG3T1hJ6yS7bV4uL2m.png",
-    link: "https://github.com/midethegreat/Camous-Ride.git",
-    status: "Live",
-    techIcons: [MapPin, Code2, Globe]
+    techIcons: [NextjsIcon, TailwindIcon, Globe, MapPin],
   },
-  {
-    title: "Multilingual Translator",
+];
 
 const experiences = [
   {
