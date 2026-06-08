@@ -177,19 +177,15 @@ export default function Home() {
                   exceeds expectations.
                 </p>
               </div>
-              <div className="mt-8 relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-gray-800 shadow-2xl">
+              <div className="mt-8 relative aspect-square max-w-[300px] mx-auto rounded-full overflow-hidden border-4 border-white/10 bg-gray-800 shadow-[0_0_50px_rgba(37,99,235,0.2)]">
                 <Image
                   src="/images/soremi-profile.png"
                   alt="Soremi Ayomide"
                   fill
-                  className="object-cover object-top opacity-100 group-hover:scale-105 transition-transform duration-700"
+                  priority
+                  className="object-cover object-top opacity-100 group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 p-4 bg-black/40 backdrop-blur-md rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="text-xs font-medium text-white">
-                    Always striving for excellence in every pixel.
-                  </p>
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
             </div>
 
