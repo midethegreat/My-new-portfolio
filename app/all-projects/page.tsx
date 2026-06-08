@@ -109,6 +109,14 @@ export default function AllProjects() {
 
 const allProjectsList = [
   {
+    title: "Campus Ride",
+    description: "Ride-hailing platform for campus commutes with real-time tracking and secure wallet integration.",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N6q0iVpXzG3T1hJ6yS7bV4uL2m.png",
+    link: "https://github.com/midethegreat/Camous-Ride.git",
+    status: "Live",
+    techIcons: [MapPin, Code2, Globe]
+  },
+  {
     title: "Multilingual Translator",
     description: "Advanced translation app supporting 12 languages with text-to-speech, copy functionality, and translation history.",
     image: "/placeholder.jpg",
