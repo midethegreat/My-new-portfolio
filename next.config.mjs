@@ -15,6 +15,7 @@ const nextConfig = {
         hostname: "**.vercel-storage.com",
       },
     ],
+    unoptimized: true,
   },
 };
 
