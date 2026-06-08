@@ -28,9 +28,15 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeProjectTab, setActiveProjectTab] = useState("design");
   const [mounted, setMounted] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -53,9 +59,13 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <nav className="flex items-center justify-between bg-black/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "py-2 sm:py-4 bg-black/40 backdrop-blur-xl border-b border-white/5" : "py-4 sm:py-6"}`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav
+            className={`flex items-center justify-between transition-all duration-300 ${scrolled ? "bg-transparent border-transparent px-0" : "bg-black/20 backdrop-blur-md border border-white/10 rounded-full px-6 py-3"}`}
+          >
             <h1 className="text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
               Soremi Ayomide
             </h1>
@@ -84,8 +94,10 @@ export default function Home() {
 
           {/* Mobile Menu */}
           <div
-            className={`md:hidden absolute top-24 left-4 right-4 bg-[#000319]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 ${
-              isMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+            className={`md:hidden absolute left-4 right-4 bg-[#000319]/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 ${
+              isMenuOpen
+                ? "top-24 max-h-80 opacity-100"
+                : "top-0 max-h-0 opacity-0 pointer-events-none"
             }`}
           >
             <div className="flex flex-col p-6 gap-4">
@@ -148,7 +160,7 @@ export default function Home() {
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 grid-rows-auto gap-4 lg:gap-6">
-            {/* Bento Card 1: Collaboration */}
+            {/* Bento Card 1: Main Profile / Collaboration */}
             <div className="md:col-span-2 lg:col-span-3 lg:row-span-2 rounded-3xl bg-gradient-to-br from-gray-900 to-black border border-white/10 p-8 flex flex-col justify-between group overflow-hidden relative">
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[60px] rounded-full -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-500/20 transition-colors" />
               <div>
@@ -163,14 +175,19 @@ export default function Home() {
                   exceeds expectations.
                 </p>
               </div>
-              <div className="mt-8 relative aspect-video rounded-xl overflow-hidden border border-white/5 bg-gray-800">
+              <div className="mt-8 relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-gray-800 shadow-2xl">
                 <Image
                   src="/images/soremi-profile.jpg"
                   alt="Soremi Ayomide"
                   fill
-                  className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover object-top opacity-100 group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 p-4 bg-black/40 backdrop-blur-md rounded-xl border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-xs font-medium text-white">
+                    Always striving for excellence in every pixel.
+                  </p>
+                </div>
               </div>
             </div>
 
