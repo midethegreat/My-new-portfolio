@@ -587,6 +587,15 @@ const devProjects = [
     githubUrl: "https://github.com/midethegreat/somnia.git",
     techIcons: [NextjsIcon, TypeScriptIcon, Globe],
   },
+  {
+    title: "Campus Ride",
+    description:
+      "A specialized ride-hailing platform for campus commutes, featuring real-time tracking, quick booking, and secure wallet integration.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-N6q0iVpXzG3T1hJ6yS7bV4uL2m.png",
+    githubUrl: "https://github.com/midethegreat/Camous-Ride.git",
+    techIcons: [NextjsIcon, TailwindIcon, Globe, MapPin],
+  },
 ];
 
 const experiences = [
