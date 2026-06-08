@@ -22,6 +22,7 @@ import {
   Download,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Home() {
@@ -313,6 +314,19 @@ export default function Home() {
               devProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link
+              href="/all-projects"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/5 border border-white/10 font-semibold text-white hover:bg-white/10 transition-all group"
+            >
+              View All Projects
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform"
+              />
+            </Link>
           </div>
         </section>
 
