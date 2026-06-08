@@ -284,9 +284,14 @@ export default function Home() {
               {["Design", "UI/UX", "Development"].map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveProjectTab(tab.toLowerCase())}
+                  onClick={() =>
+                    setActiveProjectTab(
+                      tab === "UI/UX" ? "uiux" : tab.toLowerCase(),
+                    )
+                  }
                   className={`px-6 py-2 rounded-lg text-sm font-medium transition-all ${
-                    activeProjectTab === tab.toLowerCase()
+                    activeProjectTab ===
+                    (tab === "UI/UX" ? "uiux" : tab.toLowerCase())
                       ? "bg-blue-600 text-white shadow-lg"
                       : "text-gray-400 hover:text-white hover:bg-white/5"
                   }`}
