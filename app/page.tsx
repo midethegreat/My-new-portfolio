@@ -177,7 +177,7 @@ export default function Home() {
               </div>
               <div className="mt-8 relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/5 bg-gray-800 shadow-2xl">
                 <Image
-                  src="/images/soremi-profile.jpg"
+                  src="/images/soremi-profile.png"
                   alt="Soremi Ayomide"
                   fill
                   className="object-cover object-top opacity-100 group-hover:scale-105 transition-transform duration-700"
