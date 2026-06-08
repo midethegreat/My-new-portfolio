@@ -29,6 +29,7 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [activeProjectTab, setActiveProjectTab] = useState("design");
+  const [currentReview, setCurrentReview] = useState(0);
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,7 +39,16 @@ export default function Home() {
       setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Auto-advance reviews
+    const interval = setInterval(() => {
+      setCurrentReview((prev) => (prev + 1) % reviews.length);
+    }, 5000);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearInterval(interval);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -340,6 +350,68 @@ export default function Home() {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </Link>
+          </div>
+        </section>
+
+        {/* Client Reviews Carousel */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative overflow-hidden">
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-purple-500/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
+            Kind words from{" "}
+            <span className="text-purple-400">satisfied clients</span>
+          </h2>
+
+          <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentReview * 100}%)` }}
+              >
+                {reviews.map((review, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-4">
+                    <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-gray-900 to-black border border-white/10 text-center relative">
+                      <div className="absolute top-6 left-8 text-blue-500/20">
+                        <MessageSquare size={80} fill="currentColor" />
+                      </div>
+                      <p className="text-lg sm:text-xl text-gray-300 italic mb-8 relative z-10 leading-relaxed">
+                        "{review.text}"
+                      </p>
+                      <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 rounded-full border-2 border-blue-500/30 overflow-hidden mb-4">
+                          <Image
+                            src={review.avatar}
+                            alt={review.name}
+                            width={64}
+                            height={64}
+                            className="object-cover"
+                          />
+                        </div>
+                        <h4 className="font-bold text-lg">{review.name}</h4>
+                        <p className="text-blue-400 text-sm">{review.role}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Carousel Navigation */}
+            <div className="flex justify-center gap-3 mt-10">
+              {reviews.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentReview(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentReview === index
+                      ? "bg-blue-500 w-8"
+                      : "bg-white/10 hover:bg-white/20"
+                  }`}
+                  aria-label={`Go to review ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
@@ -734,6 +806,27 @@ const phases = [
     title: "Deployment & Launch",
     description:
       "This is where the magic happens! Based on the approved design, I'll translate everything into functional code.",
+  },
+];
+
+const reviews = [
+  {
+    name: "Michael Johnson",
+    role: "Director of AlphaStream Technologies",
+    text: "Collaborating with Ayomide was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ayomide's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ayomide is the ideal partner.",
+    avatar: "/images/placeholder.jpg",
+  },
+  {
+    name: "Sarah Williams",
+    role: "CEO of GlobalConnect",
+    text: "Ayomide transformed our complex requirements into a beautiful, high-performing platform. His ability to bridge the gap between technical backend logic and a seamless frontend experience is rare. We've seen a 40% increase in user engagement since the launch.",
+    avatar: "/images/placeholder.jpg",
+  },
+  {
+    name: "David Chen",
+    role: "Founder of FinTech Solutions",
+    text: "Working with Ayomide on our logistics platform was a game-changer. His attention to detail and proactive communication made the entire development process smooth. He doesn't just write code; he understands the business goals and builds for them.",
+    avatar: "/images/placeholder.jpg",
   },
 ];
 
