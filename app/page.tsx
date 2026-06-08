@@ -651,7 +651,7 @@ const uiuxProjects = [
 
 const devProjects = [
   {
-    title: "Remote Task Manager",
+    title: "Bedding Store",
     description:
       "A robust task management solution designed for remote teams with real-time collaboration features.",
     image: "/purple-gradient-task-manager.png",
