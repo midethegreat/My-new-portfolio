@@ -41,10 +41,10 @@ export default function Home() {
     setIsMenuOpen(false);
   };
 
-  if (!mounted) return null;
-
   return (
-    <div className="min-h-screen bg-[#000319] text-white selection:bg-blue-500/30 font-sans overflow-x-hidden">
+    <div
+      className={`min-h-screen bg-[#000319] text-white selection:bg-blue-500/30 font-sans overflow-x-hidden transition-opacity duration-700 ${mounted ? "opacity-100" : "opacity-0"}`}
+    >
       {/* Radial Gradient Background */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-900/20 blur-[120px]" />
@@ -441,7 +441,7 @@ function ProjectCard({ project }: { project: any }) {
                 key={i}
                 className="w-8 h-8 rounded-full bg-black border border-white/10 flex items-center justify-center text-blue-400"
               >
-                {typeof Icon === "function" ? <Icon size={14} /> : Icon}
+                <Icon size={14} />
               </div>
             )) || (
               <div className="w-8 h-8 rounded-full bg-black border border-white/10 flex items-center justify-center text-blue-400">
