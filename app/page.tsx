@@ -27,6 +27,7 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [activeProjectTab, setActiveProjectTab] = useState("design");
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -397,15 +398,82 @@ export default function Home() {
             your goals.
           </p>
           <button
-            onClick={() =>
-              window.open("mailto:shoremiayomide13@gmail.com", "_blank")
-            }
+            onClick={() => setIsContactModalOpen(true)}
             className="relative z-10 px-8 py-4 rounded-xl bg-blue-600 font-bold text-white hover:bg-blue-700 transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(37,99,235,0.4)] flex items-center gap-2 mx-auto"
           >
             Contact Me Now <ArrowRight size={18} />
           </button>
         </section>
       </main>
+
+      {/* Contact Modal */}
+      {isContactModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsContactModalOpen(false)}
+          />
+          <div className="relative w-full max-w-md bg-[#000319] border border-white/10 rounded-3xl p-8 shadow-2xl animate-in fade-in zoom-in duration-300">
+            <button
+              onClick={() => setIsContactModalOpen(false)}
+              className="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors"
+            >
+              <X size={24} />
+            </button>
+
+            <h3 className="text-2xl font-bold mb-2">Get in touch</h3>
+            <p className="text-gray-400 mb-8">
+              Select your preferred method to contact me. I usually respond
+              within 24 hours.
+            </p>
+
+            <div className="grid gap-4">
+              <button
+                onClick={() =>
+                  window.open("mailto:shoremiayomide13@gmail.com", "_blank")
+                }
+                className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all group"
+              >
+                <div className="p-3 rounded-xl bg-blue-500/10 text-blue-400 group-hover:scale-110 transition-transform">
+                  <Mail size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="font-bold">Email</p>
+                  <p className="text-xs text-gray-400 text-wrap break-all">
+                    shoremiayomide13@gmail.com
+                  </p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => window.open("tel:+2349051435773", "_blank")}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-green-500/50 transition-all group"
+              >
+                <div className="p-3 rounded-xl bg-green-500/10 text-green-400 group-hover:scale-110 transition-transform">
+                  <Phone size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="font-bold">Phone</p>
+                  <p className="text-xs text-gray-400">+234 905 143 5773</p>
+                </div>
+              </button>
+
+              <button
+                onClick={() => window.open("https://wa.link/qx46wi", "_blank")}
+                className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-emerald-500/50 transition-all group"
+              >
+                <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 group-hover:scale-110 transition-transform">
+                  <MessageSquare size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="font-bold">WhatsApp</p>
+                  <p className="text-xs text-gray-400">Chat with me directly</p>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8 text-gray-500 text-sm">
