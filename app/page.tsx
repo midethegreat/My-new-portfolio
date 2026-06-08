@@ -123,6 +123,18 @@ export default function Home() {
           id="hero"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-32 text-center"
         >
+          <div className="mb-12 relative w-32 h-32 sm:w-40 sm:h-40 mx-auto animate-fade-in">
+            <div className="absolute inset-0 bg-blue-500/20 blur-[30px] rounded-full animate-pulse" />
+            <div className="relative w-full h-full rounded-full border-4 border-white/10 overflow-hidden shadow-[0_0_50px_rgba(37,99,235,0.3)]">
+              <Image
+                src="/images/soremi-profile.png"
+                alt="Soremi Ayomide"
+                fill
+                priority
+                className="object-cover object-top"
+              />
+            </div>
+          </div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-8 animate-fade-in">
             <Zap size={14} />
             <span>DYNAMIC WEB MAGIC WITH NEXT.JS</span>
