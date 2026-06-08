@@ -132,8 +132,10 @@ export default function Home() {
             </span>
           </h1>
           <p className="max-w-2xl mx-auto text-gray-400 text-lg sm:text-xl mb-12 animate-slide-up delay-100">
-            Hi! I'm Soremi Ayomide, a Next.js Developer based in Nigeria. <br />
-            I build high-performance SaaS products and digital experiences.
+            I build high-performance products combining robust backend
+            engineering with intuitive design. Over 5+ years, I've architected
+            fintech services and scalable digital platforms for high-growth
+            startups.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up delay-200">
             <button
