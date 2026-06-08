@@ -811,21 +811,21 @@ const phases = [
 
 const reviews = [
   {
-    name: "Michael Johnson",
-    role: "Director of AlphaStream Technologies",
-    text: "Collaborating with Ayomide was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Ayomide's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Ayomide is the ideal partner.",
+    name: "Tito",
+    role: "CEO of TT's Clothing",
+    text: "Working with Ayomide was a game-changer for our brand. He perfectly captured the essence of TT's Clothing in a digital space. The website is not only visually stunning but also incredibly fast and user-friendly. Our online sales have seen a significant boost since the launch!",
     avatar: "/images/placeholder.jpg",
   },
   {
-    name: "Sarah Williams",
-    role: "CEO of GlobalConnect",
-    text: "Ayomide transformed our complex requirements into a beautiful, high-performing platform. His ability to bridge the gap between technical backend logic and a seamless frontend experience is rare. We've seen a 40% increase in user engagement since the launch.",
+    name: "Mr. Tamilore",
+    role: "CEO of Agate",
+    text: "Ayomide's work on the Agate smart card platform was exceptional. He architected a complex system into a seamless, intuitive experience. His deep understanding of both backend robustness and frontend elegance is exactly what we needed for our high-tech solution.",
     avatar: "/images/placeholder.jpg",
   },
   {
-    name: "David Chen",
-    role: "Founder of FinTech Solutions",
-    text: "Working with Ayomide on our logistics platform was a game-changer. His attention to detail and proactive communication made the entire development process smooth. He doesn't just write code; he understands the business goals and builds for them.",
+    name: "Mr. Isaac",
+    role: "CEO of Colisdav Gadgets",
+    text: "The website Ayomide built for Colisdav Gadgets exceeded all our expectations. It's clean, modern, and perfectly displays our tech products. His professionalism and ability to deliver on time make him our go-to developer for all future projects.",
     avatar: "/images/placeholder.jpg",
   },
 ];
